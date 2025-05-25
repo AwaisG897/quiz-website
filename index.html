@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz Website</title>
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <a href="index.html" class="logo">Quiz.</a>
+        <nav class="navbar">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </header>
+      <div class="container">
+        <section class="quiz-section">
+          <div class="quiz-box">
+            <h1>Programming Quiz</h1>
+            <div class="quiz-header">
+              <span>Quiz website Tutorials</span>
+              <span class="header-score"></span>
+            </div>
+            <h2 class="question-text">what does HTML stand for?</h2>
+            <div class="option-list">
+              <!-- <div class="option">
+                        <span>A. Hyper Type Multi Language</span>
+                    </div>
+                    <div class="option">
+                        <span>B. Hyper Text Multiple Language</span>
+                    </div>
+                    <div class="option">
+                        <span>C. Hyper Text Markup Language</span>
+                    </div>
+                    <div class="option">
+                        <span>D. Home Text Multi Language</span>
+                    </div> -->
+            </div>
+            <div class="quiz-footer">
+              <span class="question-total">1 of 5 Questions</span>
+              <button class="nextbtn">Next</button>
+            </div>
+          </div>
+          <div class="result-box">
+            <h2>Quiz Result!</h2>
+            <div class="percentage-container">
+              <div class="circular-progress">
+                <span class="progress-value"></span>
+              </div>
+              <span class="score-text"></span>
+            </div>
+            <div class="buttons">
+              <button class="tryAgain-btn">Try Again</button>
+              <button class="goHome-btn">Go To Home</button>
+            </div>
+          </div>
+        </section>
+        <section class="home">
+          <div class="home-content">
+            <h1>Quiz Website</h1>
+            <p>
+              Test your programming knowledge with our interactive quizzes.
+              Choose from various programming languages and topics to challenge
+              yourself and improve your skills.
+            </p>
+            <button class="start-btn" data-category="fundamentals">
+              Start Quiz
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div class="popun-info" id="quiz-guide">
+      <h2 id="guide-title">Quiz Guide</h2>
+      <div id="guide-content">
+        <span class="info"
+          >1. Read each question carefully before selecting your answer.</span
+        >
+        <span class="info"
+          >2. Once you select an answer, it cannot be changed.</span
+        >
+        <span class="info">3. Each correct answer is worth 1 point.</span>
+        <span class="info"
+          >4. There are 10 questions in total for this quiz.</span
+        >
+        <span class="info"
+          >5. Click "Next" to proceed to the next question after
+          answering.</span
+        >
+      </div>
+      <div class="btn-group">
+        <button class="info-btn exit-btn">Exit Quiz</button>
+        <a href="#" class="info-btn contnue-btn">Continue</a>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="question.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Profile - Quiz Website</title>
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <a href="index.html" class="logo">Quiz.</a>
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </header>
+      <div class="container">
+        <section class="profile-section">
+          <div class="profile-container">
+            <h1>User Profile</h1>
+            <div class="profile-info">
+              <div class="profile-avatar">
+                <div class="avatar-circle">
+                  <span id="profile-initial">U</span>
+                </div>
+              </div>
+              <div class="user-details">
+                <div class="detail-group">
+                  <label>Name:</label>
+                  <p id="profile-name">Loading...</p>
+                </div>
+                <div class="detail-group">
+                  <label>Email:</label>
+                  <p id="profile-email">Loading...</p>
+                </div>
+                <div class="detail-group">
+                  <label>Joined:</label>
+                  <p id="profile-joined">Loading...</p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="profile-stats">
+              <h2>Your Quiz Statistics</h2>
+              <div class="stats-container">
+                <div class="stat-card">
+                  <h3>Quizzes Taken</h3>
+                  <p id="quizzes-taken">0</p>
+                </div>
+                <div class="stat-card">
+                  <h3>Average Score</h3>
+                  <p id="average-score">0%</p>
+                </div>
+                <div class="stat-card">
+                  <h3>Best Category</h3>
+                  <p id="best-category">None</p>
+                </div>
+              </div>
+            </div> -->
+            <div class="profile-actions">
+              <button id="logout-btn" class="auth-btn">Logout</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if user is logged in
+        const token = localStorage.getItem("token");
+        const userData = JSON.parse(localStorage.getItem("userData") || "{}");
+
+        if (!token || !userData) {
+          window.location.href = "login.html";
+          return;
+        }
+
+        // Update profile information
+        document.getElementById("profile-name").textContent =
+          userData.name || "Not available";
+        document.getElementById("profile-email").textContent =
+          userData.email || "Not available";
+
+        // Set profile initial
+        if (userData.name) {
+          document.getElementById("profile-initial").textContent = userData.name
+            .charAt(0)
+            .toUpperCase();
+        }
+
+        // Set joined date (placeholder for now)
+        document.getElementById("profile-joined").textContent = "Recently";
+
+        // Handle logout button
+        document
+          .getElementById("logout-btn")
+          .addEventListener("click", function () {
+            localStorage.removeItem("token");
+            localStorage.removeItem("userData");
+            window.location.href = "index.html";
+          });
+      });
+    </script>
+  </body>
+</html>
